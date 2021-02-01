@@ -1,0 +1,53 @@
+{
+  "author": "Emelson Marquez",
+  "name": "front-end-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.2",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "lodash": "^4.17.20",
+    "node-sass": "^4.0.0",
+    "npm": "^6.14.11",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "4.0.1",
+    "react-test-renderer": "^17.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "server": "node src/server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm start\"",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.12.10",
+    "identity-obj-proxy": "^3.0.0"
+  }
+}

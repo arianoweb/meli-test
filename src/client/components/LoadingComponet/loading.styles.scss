@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+.section {
+  width: 100%;
+  min-height: calc(100% - 48px);
+  flex-flow: row nowrap;
+  justify-content: center;
+  display: flex;
+  height: calc(100vh - 48px);
+}
+.container {
+  height: calc(100vh - 110px);
+  max-width: $max-width-app;
+  width: 100%;
+  margin-top: 61px;
+  background-color: $meli-white;
+}
+
+.loading {
+  animation: gradient 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    $meli-white 8%,
+    $meli-blue 38%,
+    $meli-white 56%
+  );
+  background-size: 80% 10%;
+  height: 3px;
+  max-width: $max-width-app;
+  width: 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
