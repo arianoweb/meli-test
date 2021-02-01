@@ -1,0 +1,62 @@
+@import "../../styles/variables";
+@media only screen and (max-width: 780px) {
+  .search {
+    &__header {
+      width: 100% !important;
+    }
+  }
+}
+.search {
+  &__box {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    background-color: $meli-yellow;
+    justify-content: center;
+    position: relative;
+  }
+  &__header {
+    width: $max-width-app;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    height: 48px;
+    margin: 0 $spacing-16;
+  }
+  &__logo {
+    position: relative;
+    &__img {
+      padding-top: 4px;
+      height: 28px;
+    }
+  }
+  &__input {
+    margin-left: 10px;
+    flex: 1 1 auto;
+    &__text {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      width: calc(100% - 16px);
+      height: 30px;
+      padding-left: $spacing-16;
+      border: 0px solid rgb(211, 206, 206);
+
+      &::placeholder {
+        color: $meli-gray;
+      }
+    }
+  }
+  &__button-box {
+    height: 29px;
+    margin-bottom: 4px;
+  }
+  &__button {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 0;
+    background-color: $meli-light-gray;
+    height: 32px;
+    padding-top: 4px;
+    cursor: pointer;
+  }
+}

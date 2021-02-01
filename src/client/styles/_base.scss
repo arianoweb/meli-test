@@ -1,0 +1,40 @@
+@import "./variables";
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("http://www.playnetwork.com/wp-content/themes/playnetwork/resources/assets/fonts/proximanova/proximanova-semibold.woff2");
+  font-weight: bold;
+}
+body {
+  font-size: 18px;
+  border: 0px;
+  font-family: "Proxima Nova", Helvetica Neue, Helvetica, Roboto, Arial,
+    sans-serif;
+  margin: 0;
+  background-color: $meli-light-gray;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input:focus,
+button:focus,
+input.form-control:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: 2px;
+}
+
+input {
+  border-radius: 6px;
+}

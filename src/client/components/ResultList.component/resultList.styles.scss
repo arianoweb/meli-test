@@ -1,0 +1,129 @@
+@import "../../styles/variables";
+@media only screen and (max-width: 780px) {
+  .result-list {
+    margin: 0 0 !important;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .result-list {
+    &__city-box {
+      display: none !important;
+    }
+    &__description-box {
+      width: 60%;
+      max-width: 550px;
+      &__price {
+        font-size: 18px;
+      }
+      &__title {
+        font-size: 14px !important;
+        padding-top: $spacing-16 !important;
+        $line-to-show: 5;
+        $height-calc: ($line-to-show * 14 * 1.3) * 1px;
+        height: $height-calc !important;
+        -webkit-line-clamp: $line-to-show !important;
+      }
+      &__city-box-small {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.result-list {
+  justify-self: center;
+  width: $max-width-app;
+  max-width: $max-width-app;
+  background-color: $meli-white;
+  &__main {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    cursor: pointer;
+    margin: $spacing-16;
+  }
+  &__img-box {
+    height: 100%;
+    width: 100%;
+    max-width: 180px;
+    max-height: 180px;
+    align-items: center;
+    justify-content: center;
+    padding-right: $spacing-16;
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      min-width: 100px;
+      object-fit: contain;
+      border-radius: 4px;
+      max-height: 180px;
+    }
+  }
+  &__description-box {
+    font-size: 24px;
+    height: 180px;
+    width: 60%;
+
+    &__price {
+      padding-top: 16px;
+      white-space: nowrap;
+    }
+
+    &__free-shipping {
+      padding-left: 10px;
+    }
+
+    &__title {
+      max-width: 400px;
+      $line-to-show: 4;
+      $height-calc: ($line-to-show * 18 * 1.3) * 1px;
+      height: $height-calc;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      -webkit-line-clamp: $line-to-show;
+      -webkit-box-orient: vertical;
+      margin: 0px;
+      font-size: 18px;
+      color: $meli-medium-gray;
+      line-height: 1.3;
+      font-weight: 400;
+      padding-top: 32px;
+    }
+
+    &__city-box-small {
+      padding-top: 8px;
+      font-size: 12px;
+      text-align: left;
+      color: #979797;
+      display: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+  }
+  &__city-box {
+    height: 120px;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #979797;
+    display: block;
+    width: 15%;
+  }
+  &__line {
+    height: 2px;
+    background-color: $meli-light-gray;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  &__sup {
+    font-size: 10px;
+    padding-left: 2px;
+  }
+}

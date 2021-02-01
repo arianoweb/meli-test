@@ -1,0 +1,117 @@
+@import "../../styles/variables";
+@media only screen and (max-width: 780px) {
+  .product-details {
+    &__section {
+      &__container {
+        flex-flow: column nowrap !important;
+        &__img {
+          min-width: 100% !important;
+        }
+        &__details-container {
+          min-width: 100% !important;
+          padding-left: 0 !important;
+        }
+      }
+      &__description {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+    }
+  }
+}
+.product-details {
+  justify-content: center;
+  display: flex;
+  flex-flow: row nowrap;
+  &__section {
+    display: flex;
+    width: $max-width-app;
+    justify-content: center;
+    flex-flow: column nowrap;
+
+    &__main {
+      background-color: #fff;
+      padding: $spacing-32;
+      flex-flow: column nowrap;
+      display: flex;
+      width: calc(100% - 64px);
+      max-width: 1120px;
+    }
+    &__breadcrum {
+      display: flex;
+      width: 100%;
+      max-width: $max-width-app;
+    }
+
+    &__container {
+      display: flex;
+      align-items: flex-start;
+      flex-flow: row nowrap;
+      &__img-container {
+        width: 100%;
+        height: 100%;
+        flex: 2 1 auto;
+      }
+      &__img {
+        width: 100%;
+        height: 100%;
+        max-width: 680px;
+        max-height: 680px;
+        min-width: 480px;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+      &__details-container {
+        width: 100%;
+        padding-left: $spacing-16;
+        flex: 1 1 auto;
+        max-width: 264px;
+        position: relative;
+        right: 0;
+      }
+      &__info {
+        margin-top: $spacing-32;
+        font-size: 14px;
+      }
+      &__title {
+        margin-top: $spacing-16;
+        font-size: 24px;
+        margin-bottom: $spacing-32;
+        font-weight: bold;
+      }
+      &__price {
+        font-size: 46px;
+        white-space: nowrap;
+        margin-bottom: $spacing-32;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &__button {
+        height: 48px;
+        width: 100%;
+        background-color: $meli-blue;
+        color: $meli-white;
+        border: 0 solid;
+        border-radius: 6px;
+      }
+    }
+    &__description {
+      font-size: 28px;
+      max-width: 680px;
+      margin-top: $spacing-32;
+      width: 66%;
+    }
+    &__description-text {
+      margin-top: $spacing-32;
+      max-width: 680px;
+      font-size: $spacing-16;
+      white-space: pre-wrap;
+      color: $meli-gray;
+      word-break: break-word;
+    }
+    &__sup {
+      font-size: 24px;
+      padding-left: 4px;
+    }
+  }
+}

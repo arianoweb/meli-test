@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+.not-found {
+  &__main {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: center;
+    height: calc(100vh - 48px);
+  }
+  &__msj-container {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    height: 80%;
+    margin: 0 $spacing-16;
+  }
+  &__msj-icon {
+    color: $meli-gray;
+    font-size: 70px;
+    margin: 32px 0;
+  }
+  &__msj-text {
+    color: $meli-gray;
+    max-width: 600px;
+    text-align: center;
+    line-height: 30px;
+  }
+}
