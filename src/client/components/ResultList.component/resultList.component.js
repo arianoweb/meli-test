@@ -11,13 +11,22 @@ import queryString from "query-string";
 export default class ResultListComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { result: null, loading:false };
+    this.state = { result: null, loading: false };
     this.openItem = this.openItem.bind(this);
   }
 
+  /**
+   * Se estrae el query string conrrespondiente de la ruta establecida
+   * en el componente de busqueda, se configura un objeto de error por
+   * si falla el get de los datos, asi puede intentarlo nuevamente si hay
+   * algun fallo de comunicación. Se envia la palabra clave de busqueda
+   * al servicio y si la respuesta es positiva se se la prop general para
+   * guardar el actual resultado, esto permite usar los datos sin hacer un
+   * nuevo request luego de haber entrado al detalle de un producto
+   */
   onSearch() {
     const value = queryString.parse(this.props.location.search);
-    const keyWord = value.search || ""
+    const keyWord = value.search || "";
     if (keyWord) {
       this.setState({ loading: true });
       const pushError = {
@@ -34,12 +43,12 @@ export default class ResultListComponent extends React.Component {
     }
   }
 
-    /**El componente padre almacena una prop con el resultado actua de la ultma busqueda
-     * asi al sesmontar el componente esta data no se pierde y no es necesario hacer un
-     * nuevo request al ir hacia atras desde el deatlle de un producto seleccionado, si no 
-     * hay data se la ultima busqueda se procede a hacer un nuevo request en onSearch
-     * NOTA: Ver comentario en onSearch 
-     */
+  /**El componente padre almacena una prop con el resultado actua de la ultma busqueda
+   * asi al sesmontar el componente esta data no se pierde y no es necesario hacer un
+   * nuevo request al ir hacia atras desde el deatlle de un producto seleccionado, si no
+   * hay data se la ultima busqueda se procede a hacer un nuevo request en onSearch
+   * NOTA: Ver comentario en onSearch
+   */
   componentDidMount() {
     if (!this.props.parentProps.data) {
       this.onSearch();
@@ -102,7 +111,7 @@ export default class ResultListComponent extends React.Component {
           ) : (
             <NotFoundComponent />
           ))}
-           {this.state.loading && <LoadingComponent />}
+        {this.state.loading && <LoadingComponent />}
       </section>
     );
   }
