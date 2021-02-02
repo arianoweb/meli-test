@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.10",
+    "concurrently": "^5.3.0",
     "identity-obj-proxy": "^3.0.0"
   }
 }
