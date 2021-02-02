@@ -27,7 +27,6 @@ const setCategories = (data) => {
   const filters = data.filters.find((f) => f.id === "category");
   const categories =
     filters || data.available_filters.find((f) => f.id === "category");
-  console.log(categories);
   return categories
     ? data.filters.length
       ? categories.values[0].path_from_root.map((c) => c.name)
@@ -40,7 +39,10 @@ class Mapper {
     return {
       author: res.author,
       categories: setCategories(res.data),
-      items: res.data.results.map((item) => formatItem(item)),
+      items: res.data.results.map((item) => (
+        {...formatItem(item),
+          city:item.address.state_name
+        })),
     };
   }
 

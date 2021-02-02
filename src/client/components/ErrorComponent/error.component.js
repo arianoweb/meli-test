@@ -8,7 +8,6 @@ export default class ErrorComponent extends React.Component {
   }
 
   goRetryPath() {
-    console.log(this.props.location.state.retryPath);
     this.props.history.push(this.props.location.state.retryPath);
     window.location.reload();
   }

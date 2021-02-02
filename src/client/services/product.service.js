@@ -4,7 +4,6 @@ const getService = async (uri, error) => {
   try {
     return await axios.get(`http://localhost:8080/api/${uri}`);
   } catch (e) {
-    console.log(e);
     error.goError("/error", { retryPath: error.path });
     return null;
   }

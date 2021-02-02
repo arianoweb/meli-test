@@ -79,19 +79,19 @@ export default class ResultListComponent extends React.Component {
                             : "00"}
                         </sup>
                         {item.free_shipping && (
-                          <span className="result-list__description-box__free-shipping">
+                          <div className="result-list__description-box__free-shipping">
                             <img src={freeShipping} alt={item.title} />
-                          </span>
+                          </div>
                         )}
                       </div>
                       <div className="result-list__description-box__title">
                         {item.title}
                       </div>
                       <div className="result-list__description-box__city-box-small">
-                        Capital Federal
+                        {item.city}
                       </div>
                     </div>
-                    <div className="result-list__city-box">Capital Federal</div>
+                    <div className="result-list__city-box">{item.city}</div>
                   </div>
                   {this.state.result.items.length - 1 > i && (
                     <div className="result-list__line"></div>
