@@ -24,7 +24,6 @@ const getCurrentProduct = async (req) => {
   ]);
   if (product && product.data && description) {
     const categories = await meliService.getCategory(product.data.category_id);
-    console.log(categories);
     const response = {
       ...product,
       data: {
