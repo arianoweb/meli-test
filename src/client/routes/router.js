@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchBoxComponent from "../components/SearchBox.component/searchBox.component";
 import ResultListComponent from "../components/ResultList.component/resultList.component";
@@ -7,10 +8,15 @@ import ErrorComponent from "../components/ErrorComponent/error.component";
 export default function RouteConfig() {
   const generalProps = {
     data: null,
-    setData: () => {},
-    onSearch: () => {},
   };
-
+  /**
+   * Se configura las rutas con sus componentes
+   * para tener una mejor viste de los compnentes
+   * de primer nivel, al crecer la aplocación esto
+   * ayudaria a una mejor visualizacion, ademas
+   * se envia una prop unica a todos los componentes
+   * permitiendo el seteo de datos entre ellos
+   */
   const routes = [
     {
       path: "/",
@@ -68,8 +74,10 @@ export default function RouteConfig() {
   );
 
   return (
-    <Router>
-      <SwitchRouter parentProps={generalProps} currentRoutes={routes} />
-    </Router>
+    <section>
+      <Router>
+        <SwitchRouter parentProps={generalProps} currentRoutes={routes} />
+      </Router>
+    </section>
   );
 }
